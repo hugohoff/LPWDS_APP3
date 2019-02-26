@@ -1,25 +1,56 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//we importe the react object from react package
+import React from "react";
 
-class App extends Component {
-  render() {
+import Titles from "./components/Titles";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
+
+const API_KEY = "fc844cecf0f7a720b8ac6d5912ff6b55";
+
+//initialize a component
+class App extends React.Component {
+
+  state = {
+    city: undefined,
+    temperature: undefined,
+    main: undefined,
+    error:undefined,
+  }
+
+  getWeather = async (e) => {
+    e.preventDefault();
+    const city = e.target.elements.city.value;
+    const api_call = await fetch("http://api.openweathermap.org/data/2.5/weather?q="+ city +"&land=fr&units=metric&appid=" + API_KEY);
+    const data = await api_call.json();
+
+    if (city){
+      this.setState({
+        city : data.name,
+        temperature : data.main.temp,
+        main : data.weather[0].main,
+        error : ""
+      })
+    } else {
+      this.setState({
+        city: undefined,
+        temperature: undefined,
+        main: undefined,
+        error : "Oups, can't find weather"
+      })
+    }
+  }
+
+  render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Titles/>
+        <Form getWeather={this.getWeather}/>
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          main={this.state.main}
+          error={this.state.error}
+          />
       </div>
     );
   }
