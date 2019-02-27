@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+div.wrapper {
+  height: 100vh;
+}
+
+div.inner {
+  height: inherit;
+}
+
+#Titles {
+  text-align: center;
+}

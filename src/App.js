@@ -42,15 +42,19 @@ class App extends React.Component {
 
   render(){
     return (
+      <div class='container wrapper'>
+      <div class='row d-flex flex-column align-items-center justify-content-center inner'>
       <div>
-        <Titles/>
-        <Form getWeather={this.getWeather}/>
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          main={this.state.main}
-          error={this.state.error}
-          />
+      <Titles/>
+      <Form getWeather={this.getWeather}/>
+      <Weather
+      temperature={this.state.temperature}
+      city={this.state.city}
+      main={this.state.main}
+      error={this.state.error}
+      />
+      </div>
+      </div>
       </div>
     );
   }
