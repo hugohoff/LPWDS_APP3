@@ -60,31 +60,21 @@ class App extends React.Component {
 
   render(){
     return (
-      <div class='container wrapper'>
-      <div class='row d-flex flex-column align-items-center justify-content-center inner'>
+      <div className='container wrapper'>
+      <div className='row d-flex flex-column align-items-center justify-content-center inner'>
       <div>
-<<<<<<< HEAD
       <Titles/>
       <Form getWeather={this.getWeather}/>
       <Weather
-      temperature={this.state.temperature}
-      city={this.state.city}
-      main={this.state.main}
-      error={this.state.error}
-      />
+        temperature={this.state.temperature}
+        city={this.state.city}
+        main={this.state.main}
+        icon={this.state.icon}
+        error={this.state.error}
+        />
       </div>
       </div>
-=======
-        <Titles/>
-        <Form getWeather={this.getWeather}/>
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          main={this.state.main}
-          icon={this.state.icon}
-          error={this.state.error}
-          />
->>>>>>> a8f7245b0e41cdad713d362df13f3f831c070d0d
+
       </div>
     );
   }
