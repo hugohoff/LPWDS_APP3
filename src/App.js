@@ -15,7 +15,7 @@ class App extends React.Component {
     temperature: undefined,
     main: undefined,
     icon: undefined,
-    error:undefined,
+    error: undefined,
   }
 
   getWeather = async (e) => {
@@ -29,14 +29,29 @@ class App extends React.Component {
       let icon = null;
       switch (data.weather[0].main) {
         case "Clear":
-          icon = "url de l'icone de soleil";
-          break;
+        icon = "./assets/images/clear-icon.png";
+        break;
         case "Rain":
-          icon = "url de l'icone de pluie";
-          break;
+        icon = "./assets/images/rain-icon.png";
+        break;
         case "Clouds":
-          icon = "url de l'icone de nuages";
-          break;
+        icon = "./assets/images/clouds-icon.png";
+        break;
+        case "Thunderstorm":
+        icon = "./assets/images/thunder-icon.png";
+        break;
+        case "Drizzle":
+        icon = "./assets/images/drizzle-icon.png";
+        break;
+        case "Snow":
+        icon = "./assets/images/snow-icon.png";
+        break;
+        case "Smoke":
+        icon = "./assets/images/wind-icon.png";
+        break;
+        case "Mist":
+        icon = "./assets/images/wind-icon.png";
+        break;
         default :
         icon = undefined;
       }
@@ -63,28 +78,17 @@ class App extends React.Component {
       <div class='container wrapper'>
       <div class='row d-flex flex-column align-items-center justify-content-center inner'>
       <div>
-<<<<<<< HEAD
       <Titles/>
       <Form getWeather={this.getWeather}/>
       <Weather
       temperature={this.state.temperature}
       city={this.state.city}
       main={this.state.main}
+      icon={this.state.icon}
       error={this.state.error}
       />
       </div>
       </div>
-=======
-        <Titles/>
-        <Form getWeather={this.getWeather}/>
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          main={this.state.main}
-          icon={this.state.icon}
-          error={this.state.error}
-          />
->>>>>>> a8f7245b0e41cdad713d362df13f3f831c070d0d
       </div>
     );
   }

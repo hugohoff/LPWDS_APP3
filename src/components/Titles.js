@@ -7,6 +7,7 @@ class Titles extends React.Component {
       <div id='Titles'>
         <h1>Instant Weather</h1>
         <p>Find out instant weather for your city</p>
+        <button><span>Start</span></button>
       </div>
     );
   }

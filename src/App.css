@@ -1,7 +1,109 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 body {
-  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a{
+  color: black;
+}
+a:hover{
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  text-align: inherit;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* RESET CSS END*/
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+h1 {
+  font-size: 28px;
+  padding: 10px;
+  margin: 50px;
+}
+
+p {
+  margin: 50px auto;
 }
 
 div.wrapper {
@@ -12,6 +114,120 @@ div.inner {
   height: inherit;
 }
 
+button {
+  display: block;
+  margin: 50px auto;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 18px;
+  width: 100px;
+}
+
+button span {
+  position: relative;
+  width: 100px;
+}
+
+button span:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(-45deg);
+  top: 12px;
+  right: -15px;
+  transition: all .3s ease;
+}
+
+button span:before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(45deg);
+  top: 8px;
+  right: -15px;
+  transition: all .3s ease;
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 1px;
+  background: #fff;
+  top: 10px;
+  left: 88px;
+  transition: width .3s ease;
+}
+
+form button:after {
+  left: 84px;
+}
+
+button:hover:after {
+  width: 10px;
+}
+
+button:hover span:before {
+  transform: rotate(45deg) translate(4px, -4px);
+}
+
+button:hover span:after {
+  transform: rotate(-45deg) translate(4px, 4px);
+}
+
+form {
+  text-align: center;
+}
+
+form input {
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  padding: 10px 0;
+
+}
+
+form input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+
+}
+
 #Titles {
   text-align: center;
+}
+
+#weather-details {
+  text-align: center;
+}
+
+#weather-details img#weather-icon {
+  width: 20%;
+}
+
+p.temp {
+  position: relative;
+  display: block;
+  width: 100px;
+  margin: 50px auto;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+p.temp span{
+  width: 40px;
+  height: 30px;
+  left: -40px;
+  top: 3px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('assets/images/temp-icon.png');
+
 }
