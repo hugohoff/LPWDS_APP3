@@ -57,6 +57,7 @@ class Weather extends React.Component {
         { this.props.main && <p className='main-info'>{this.props.main}</p>}
         { this.props.temperature && <p className='temp' ><span></span>{this.props.temperature}°C</p>}
         { this.props.error && <p>{this.props.error}</p>}
+        <button><span>Back</span></button>
       </div>
     );
   }

@@ -84,7 +84,7 @@ button:focus {
 }
 
 
-/* RESET CSS END*/
+/*---------------RESET CSS END---------------*/
 
 
 body {
@@ -104,14 +104,6 @@ h1 {
 
 p {
   margin: 50px auto;
-}
-
-div.wrapper {
-  height: 100vh;
-}
-
-div.inner {
-  height: inherit;
 }
 
 button {
@@ -179,11 +171,40 @@ button:hover span:after {
   transform: rotate(-45deg) translate(4px, 4px);
 }
 
-form {
-  text-align: center;
+/*-----------------Bootstrap Container-----------------*/
+
+div.wrapper {
+  height: 100vh;
 }
 
-form input {
+div.inner {
+  height: inherit;
+}
+
+#Titles, Form, #weather-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/*-----------------Form styles-----------------*/
+
+div form {
+  text-align: center;
+  transition: transform .4s ease;
+  transform: translate(1000%,-50%);
+}
+
+div form.form-active {
+  transform: translate(-50%,-50%);
+}
+
+div form.form-active-left {
+  transform: translate(-1000%,-50%);
+}
+
+div form input {
   outline: none;
   border: none;
   background: none;
@@ -196,22 +217,36 @@ form input {
 form input::placeholder {
   color: #fff;
   opacity: 0.5;
-
 }
+
+/*-----------------Titles styles-----------------*/
 
 #Titles {
   text-align: center;
+  transition: transform .4s ease;
 }
+
+#Titles.titles-inactive {
+  transform: translate(-1000%,-50%);
+}
+
+/*-----------------Weather info styles-----------------*/
 
 #weather-details {
   text-align: center;
+  transform: translate(1000%,-50%);
+  transition: transform .4s ease;
+}
+
+#weather-details.weather-active {
+  transform: translate(-50%,-50%);
 }
 
 #weather-details img#weather-icon {
   width: 20%;
 }
 
-p.temp {
+#weather-details p.temp {
   position: relative;
   display: block;
   width: 100px;
@@ -220,7 +255,7 @@ p.temp {
   font-size: 28px;
 }
 
-p.temp span{
+#weather-details p.temp span{
   width: 40px;
   height: 30px;
   left: -40px;
@@ -230,4 +265,27 @@ p.temp span{
   background-size: contain;
   background-image: url('assets/images/temp-icon.png');
 
+}
+
+#weather-details button span:before {
+  transform: rotate(-45deg);
+  right: 55px;
+}
+
+#weather-details button span:after {
+  transform: rotate(45deg);
+  right: 55px;
+}
+
+#weather-details button:after {
+  right: 80px;
+  left: auto;
+}
+
+#weather-details button:hover span:before {
+  transform: translate(-6px, 0px) rotate(-45deg);
+}
+
+#weather-details button:hover span:after {
+  transform: translate(-6px, 0px) rotate(45deg);
 }
