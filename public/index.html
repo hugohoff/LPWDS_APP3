@@ -27,7 +27,45 @@ Learn how to configure a non-root public URL by running `npm run build`.
 <title>React App</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-  $("#Titles").addClass("bar");
+$(document).ready(function(){
+
+  const Titles = $('#Titles');
+  const startBtn = $('#Titles button');
+  const weatherBtn = $('Form button');
+  const weatherDetails = $('#weather-details');
+  const backBtn = $('#weather-details button');
+  const weatherForm = $('Form');
+
+  startBtn.click(function() {
+    formActive();
+  });
+
+  weatherBtn.click(function(){
+    weatherActive();
+  });
+
+  backBtn.click(function(){
+    searchActive();
+  });
+
+  function formActive() {
+    Titles.addClass('titles-inactive');
+    weatherForm.addClass('form-active');
+  }
+
+  function weatherActive() {
+    weatherDetails.addClass('weather-active');
+    weatherForm.addClass('form-active-left');
+  }
+
+  function searchActive() {
+    weatherDetails.removeClass('weather-active');
+    weatherForm.removeClass('form-active-left');
+  }
+
+
+});
+
 </script>
 </head>
 <body>
