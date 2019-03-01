@@ -26,40 +26,10 @@ class App extends React.Component {
 
     if (city){
       console.log(data);
-      let icon = null;
-      switch (data.weather[0].main) {
-        case "Clear":
-        icon = "./assets/images/clear-icon.png";
-        break;
-        case "Rain":
-        icon = "./assets/images/rain-icon.png";
-        break;
-        case "Clouds":
-        icon = "./assets/images/clouds-icon.png";
-        break;
-        case "Thunderstorm":
-        icon = "./assets/images/thunder-icon.png";
-        break;
-        case "Drizzle":
-        icon = "./assets/images/drizzle-icon.png";
-        break;
-        case "Snow":
-        icon = "./assets/images/snow-icon.png";
-        break;
-        case "Smoke":
-        icon = "./assets/images/wind-icon.png";
-        break;
-        case "Mist":
-        icon = "./assets/images/wind-icon.png";
-        break;
-        default :
-        icon = undefined;
-      }
       this.setState({
         city : data.name,
         temperature : data.main.temp,
         main : data.weather[0].main,
-        icon: icon,
         error : ""
       })
     } else {
@@ -67,7 +37,6 @@ class App extends React.Component {
         city: undefined,
         temperature: undefined,
         main: undefined,
-        icon: undefined,
         error : "Oups, can't find weather"
       })
     }
