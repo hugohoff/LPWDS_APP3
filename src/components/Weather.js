@@ -12,9 +12,6 @@ import wind from '../assets/images/wind-icon.png';
 
 let icon = undefined;
 
-
-
-
 class Weather extends React.Component {
 
   findIcon() {
@@ -52,7 +49,7 @@ class Weather extends React.Component {
     console.log(this.icon);
     return (
       <div id='weather-details'>
-        { this.props.city && <h1>Now in {this.props.city}</h1>}
+        { this.props.city && <h1><span>Now in</span> {this.props.city}</h1>}
         { this.props.main && <img id="weather-icon" src={icon} alt="this.props.main"/>}
         { this.props.main && <p className='main-info'>{this.props.main}</p>}
         { this.props.temperature && <p className='temp' ><span></span>{this.props.temperature}°C</p>}

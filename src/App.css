@@ -91,15 +91,22 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 16px;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
 h1 {
   font-size: 28px;
   padding: 10px;
   margin: 50px;
+}
+
+h1 span {
+  text-transform: uppercase;
+  font-size: 14px;
+  display: block;
+  margin: 20px 0;
 }
 
 p {
@@ -169,6 +176,16 @@ button:hover span:before {
 
 button:hover span:after {
   transform: rotate(-45deg) translate(4px, 4px);
+}
+
+/*-----------------Gradient-----------------*/
+
+#gradient {
+  position: fixed;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
 /*-----------------Bootstrap Container-----------------*/
@@ -246,6 +263,11 @@ form input::placeholder {
   width: 20%;
 }
 
+
+#weather-details p.main-info {
+  display: none;
+}
+
 #weather-details p.temp {
   position: relative;
   display: block;
@@ -253,12 +275,13 @@ form input::placeholder {
   margin: 50px auto;
   font-weight: bold;
   font-size: 28px;
+  text-align: right;
 }
 
 #weather-details p.temp span{
   width: 40px;
   height: 30px;
-  left: -40px;
+  left: -10px;
   top: 3px;
   position: absolute;
   background-repeat: no-repeat;
