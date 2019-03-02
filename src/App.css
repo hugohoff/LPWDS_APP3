@@ -268,26 +268,21 @@ form input::placeholder {
   display: none;
 }
 
-#weather-details p.temp {
-  position: relative;
-  display: block;
-  width: 100px;
-  margin: 50px auto;
+#weather-details div.temp {
   font-weight: bold;
   font-size: 28px;
-  text-align: right;
+  margin: 50px 0;
+  text-align: center;
 }
 
-#weather-details p.temp span{
-  width: 40px;
-  height: 30px;
-  left: -10px;
-  top: 3px;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url('assets/images/temp-icon.png');
+#weather-details div.temp img, #weather-details div.temp p  {
+  display: inline;
+}
 
+#weather-details div.temp img{
+  width: 40px;
+  position: relative;
+  top: 14px;
 }
 
 #weather-details button span:before {

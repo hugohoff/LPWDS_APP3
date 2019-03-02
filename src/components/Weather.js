@@ -50,9 +50,9 @@ class Weather extends React.Component {
     return (
       <div id='weather-details'>
         { this.props.city && <h1><span>Now in</span> {this.props.city}</h1>}
-        { this.props.main && <img id="weather-icon" src={icon} alt="this.props.main"/>}
+        { this.props.main && <img id="weather-icon" src={icon} alt={icon}/>}
         { this.props.main && <p className='main-info'>{this.props.main}</p>}
-        { this.props.temperature && <p className='temp' ><span></span>{this.props.temperature}°C</p>}
+        { this.props.temperature && <div className='temp'><img src={temp} alt='temp icon'/><p>{this.props.temperature}°C</p></div>}
         { this.props.error && <p>{this.props.error}</p>}
         <button><span>Back</span></button>
       </div>
