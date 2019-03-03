@@ -91,9 +91,13 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 16px;
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
+}
+
+#root {
+  overflow: hidden;
 }
 
 h1 {
@@ -194,6 +198,13 @@ div.wrapper {
   height: 100vh;
 }
 
+div.wrapper > div > div {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 div.inner {
   height: inherit;
 }
@@ -243,17 +254,18 @@ div.loader-container {
   z-index: 1;
   height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
 div.loader-inner {
   position: relative;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  left: 40px;
 }
 
 svg {
-  width: 500px;
+  width: 400px;
   position: absolute;
   left: 50%;
   top: 50%;
