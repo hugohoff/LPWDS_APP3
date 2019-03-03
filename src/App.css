@@ -182,7 +182,7 @@ button:hover span:after {
   transform: rotate(-45deg) translate(4px, 4px);
 }
 
-/*-----------------Gradient-----------------*/
+/*-----------------Gradients-----------------*/
 
 #gradient {
   position: fixed;
@@ -190,6 +190,66 @@ button:hover span:after {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+#custom-gradient {
+  position: fixed;
+  background: red;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+#weather-gradient {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .8s ease;
+}
+
+#weather-gradient.default {
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.clear {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.rain {
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.clouds {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.thunder {
+  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.drizzle {
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  opacity: 1;
+  z-index: 0;
+}
+
+#weather-gradient.snow {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  opacity: 1;
+  z-index: 0;
 }
 
 /*-----------------Bootstrap Container-----------------*/

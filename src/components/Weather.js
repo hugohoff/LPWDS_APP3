@@ -11,6 +11,7 @@ import thunder from '../assets/images/thunder-icon.png';
 import wind from '../assets/images/wind-icon.png';
 
 let icon = undefined;
+let gradient = undefined;
 
 class Weather extends React.Component {
 
@@ -44,10 +45,45 @@ class Weather extends React.Component {
       icon = undefined;
     }
   }
+
+  findGradient() {
+    switch (this.props.main) {
+      case "Clear":
+      gradient = "clear";
+      break;
+      case "Rain":
+      gradient = "rain";
+      break;
+      case "Clouds":
+      gradient = "clouds";
+      break;
+      case "Thunderstorm":
+      gradient = "thunder";
+      break;
+      case "Drizzle":
+      gradient = "drizzle";
+      break;
+      case "Snow":
+      gradient = "snow";
+      break;
+      // case "Smoke":
+      // gradient = smoke;
+      // break;
+      // case "Mist":
+      // gradient = mist;
+      // break;
+      default :
+      gradient = undefined;
+    }
+  }
+
   render(){
     this.findIcon();
-    console.log(this.icon);
+    console.log(icon);
+    this.findGradient();
+    console.log(gradient);
     return (
+      <div id="weather-gradient" className={gradient}>
       <div id='weather-details'>
         { this.props.city && <h1><span>Now in</span> {this.props.city}</h1>}
         { this.props.main && <img id="weather-icon" src={icon} alt={icon}/>}
@@ -55,6 +91,7 @@ class Weather extends React.Component {
         { this.props.temperature && <div className='temp'><img src={temp} alt='temp icon'/><p>{this.props.temperature}°C</p></div>}
         { this.props.error && <p>{this.props.error}</p>}
         <button><span>Back</span></button>
+      </div>
       </div>
     );
   }

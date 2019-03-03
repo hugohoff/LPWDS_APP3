@@ -71,6 +71,7 @@ $(document).ready(function(){
   const weatherDetails = $('#weather-details');
   const backBtn = $('#weather-details button');
   const weatherForm = $('Form');
+  const weatherGradient = $('#weather-gradient');
 
   startBtn.click(function() {
     formActive();
@@ -92,11 +93,14 @@ $(document).ready(function(){
   function weatherActive() {
     weatherDetails.addClass('weather-active');
     weatherForm.addClass('form-active-left');
+    weatherGradient.addClass('default');
+
   }
 
   function searchActive() {
     weatherDetails.removeClass('weather-active');
     weatherForm.removeClass('form-active-left');
+    weatherGradient.removeClass();
   }
 });
 
