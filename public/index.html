@@ -26,8 +26,47 @@ Learn how to configure a non-root public URL by running `npm run build`.
 -->
 <title>React App</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 <script>
 $(document).ready(function(){
+
+  //Snap SVG
+
+  const loader = $(".loader-container")
+  const mainSVG = Snap('#svg-loader');
+  const cloud1 = mainSVG.select("#cloud1");
+  const cloud2 = mainSVG.select("#cloud2");
+  const cloud3 = mainSVG.select("#cloud3");
+  const sun = mainSVG.select('#sun');
+
+  sun.animate({
+    r: '208.4'
+  },2000, mina.elastic);
+
+  setTimeout(function(){
+
+    cloud1.animate({
+      x2: '371.7px'
+    },800, mina.elastic);
+
+    setTimeout(function(){
+      cloud2.animate({
+        x2: '371.7px'
+      },800, mina.elastic);
+    },100);
+
+    setTimeout(function(){
+      cloud3.animate({
+        x2: '371.7px'
+      },800, mina.elastic);
+    },200);
+  },500);
+
+  setTimeout(function(){
+    loader.fadeOut(1000);
+  }, 1400);
+
+  //Page transitions
 
   const Titles = $('#Titles');
   const startBtn = $('#Titles button');
@@ -63,21 +102,38 @@ $(document).ready(function(){
     weatherForm.removeClass('form-active-left');
   }
 });
+
 </script>
 </head>
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="gradient"></div>
-  <div id="root"></div>
-  <!--
-  This HTML file is a template.
-  If you open it directly in the browser, you will see an empty page.
+  <div class="loader-container">
+    <div class="loader-inner">
+      <svg id='svg-loader' x="0px" y="0px"
+      viewBox="0 0 941.9 695.3">
+      <style type="text/css">
+      .st0{fill:none;stroke:#FFF;stroke-width:40;stroke-miterlimit:10;}
+      </style>
+      <g>
+        <circle id="sun" class="st0" cx="433.5" cy="297" r="108.4"/>
+        <line id="cloud3" class="st0" x1="112.1" y1="405.4" x2="112.1" y2="405.4"/>
+        <line id="cloud2" class="st0" x1="112.1" y1="297" x2="112.1" y2="297"/>
+        <line id="cloud1" class="st0" x1="112.1" y1="188.6" x2="112.1" y2="188.6"/>
+      </g>
+    </svg>
 
-  You can add webfonts, meta tags, or analytics to this file.
-  The build step will place the bundled scripts into the <body> tag.
+  </div>
+</div>
+<div id="root"></div>
+<!--
+This HTML file is a template.
+If you open it directly in the browser, you will see an empty page.
 
-  To begin the development, run `npm start` or `yarn start`.
-  To create a production bundle, use `npm run build` or `yarn build`.
+You can add webfonts, meta tags, or analytics to this file.
+The build step will place the bundled scripts into the <body> tag.
+
+To begin the development, run `npm start` or `yarn start`.
+To create a production bundle, use `npm run build` or `yarn build`.
 -->
 </body>
 </html>

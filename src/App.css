@@ -236,6 +236,30 @@ form input::placeholder {
   opacity: 0.5;
 }
 
+/*-----------------Loader-----------------*/
+
+div.loader-container {
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+}
+
+div.loader-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+svg {
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
 /*-----------------Titles styles-----------------*/
 
 #Titles {
