@@ -216,37 +216,37 @@ button:hover span:after {
   z-index: 0;
 }
 
-#weather-gradient.clear {
+div#weather-gradient.clear {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   opacity: 1;
   z-index: 0;
 }
 
-#weather-gradient.rain {
+div#weather-gradient.rain {
   background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
   opacity: 1;
   z-index: 0;
 }
 
-#weather-gradient.clouds {
+div#weather-gradient.clouds {
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   opacity: 1;
   z-index: 0;
 }
 
-#weather-gradient.thunder {
+div#weather-gradient.thunder {
   background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
   opacity: 1;
   z-index: 0;
 }
 
-#weather-gradient.drizzle {
+div#weather-gradient.drizzle {
   background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   opacity: 1;
   z-index: 0;
 }
 
-#weather-gradient.snow {
+div#weather-gradient.snow {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   opacity: 1;
   z-index: 0;
